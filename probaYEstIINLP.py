@@ -15,11 +15,11 @@ def getParams(text):
     nlp = spacy.load("es_core_news_sm")
     matcher = Matcher(nlp.vocab)
     
-    pattern = [{"LOWER": "licenciatura"}, {"IS_PUNCT": True}, {"LOWER": "derecho"}]
-    pattern2 = [{"LOWER": "licenciatura"}, {"LOWER": "en"}, {"LOWER": "derecho"}]
-    pattern3 = [{"LOWER": "lic."}, {"LOWER": "derecho"}]
+    pattern = [{"LOWER": "licenciatura"}, {"IS_PUNCT": True}, {"LOWER": "estadística"}]
+    pattern2 = [{"LOWER": "licenciatura"}, {"LOWER": "en"}, {"LOWER": "estadística"}]
+    pattern3 = [{"LOWER": "lic."}, {"LOWER": "estadística"}]
     pattern4 = [{"LOWER": "derecho"}]
-    pattern5 = [{"LOWER": "licenciatura"}, {"LOWER": "derecho"}]
+    pattern5 = [{"LOWER": "licenciatura"}, {"LOWER": "estadística"}]
     matcher.add("DER", [pattern,pattern2,pattern3,pattern4,pattern5])
 
     text_without_sw=removeStopWords(text)
